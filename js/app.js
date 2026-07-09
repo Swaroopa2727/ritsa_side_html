@@ -5,6 +5,8 @@
   const sidebar  = document.getElementById('sidebar');
   const toggle   = document.getElementById('sidebarToggle');
   const wrapper  = document.getElementById('mainWrapper');
+  const userMenu = document.querySelector('.user-menu');
+  const userToggle = document.getElementById('userMenuToggle');
 
   // Create overlay
   const overlay = document.createElement('div');
@@ -39,6 +41,28 @@
   window.addEventListener('resize', function () {
     if (!isMobile()) closeSidebar();
   });
+
+  if (userMenu && userToggle) {
+    userToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const isOpen = userMenu.classList.toggle('show');
+      userToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!userMenu.contains(e.target)) {
+        userMenu.classList.remove('show');
+        userToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        userMenu.classList.remove('show');
+        userToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 
   // Chevron rotation for collapse items
   document.querySelectorAll('[data-bs-toggle="collapse"]').forEach(function (el) {

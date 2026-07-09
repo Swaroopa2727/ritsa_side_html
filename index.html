@@ -30,87 +30,170 @@
       <span>Dashboard</span>
     </a>
 
+    <!-- Master Data -->
     <div class="nav-group">
-      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navProcure">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navMasterData">
+        <i class="bi bi-database"></i>
+        <span>Master Data</span>
+        <i class="bi bi-chevron-down ms-auto chev"></i>
+      </a>
+      <div class="collapse" id="navMasterData">
+        <a href="#" class="nav-sub-item">Organization</a>
+        <a href="#" class="nav-sub-item">Materials</a>
+        <a href="#" class="nav-sub-item">Business Partners</a>
+        <a href="#" class="nav-sub-item">Warehouse</a>
+        <a href="#" class="nav-sub-item">Purchasing</a>
+        <a href="#" class="nav-sub-item">Inventory</a>
+        <a href="#" class="nav-sub-item">Quality</a>
+        <a href="#" class="nav-sub-item">Configuration</a>
+      </div>
+    </div>
+
+    <!-- Purchasing -->
+    <div class="nav-group">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navPurchasing">
         <i class="bi bi-cart3"></i>
-        <span>Procurement &amp; Intake</span>
+        <span>Purchasing</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navProcure">
-        <a href="#" class="nav-sub-item">Purchase Orders</a>
-        <a href="#" class="nav-sub-item">Material Intake</a>
-        <a href="#" class="nav-sub-item">Vendor Management</a>
+      <div class="collapse" id="navPurchasing">
+        <a href="#" class="nav-sub-item">Purchase Requisition</a>
+        <a href="#" class="nav-sub-item">Request for Quotation (RFQ)</a>
+        <a href="#" class="nav-sub-item">Quotation Comparison</a>
+        <a href="#" class="nav-sub-item">Purchase Order</a>
+        <a href="#" class="nav-sub-item">Purchase Contracts</a>
+        <a href="#" class="nav-sub-item">Purchase Scheduling</a>
+        <a href="#" class="nav-sub-item">Purchase History</a>
       </div>
     </div>
 
+    <!-- Goods Receipt -->
     <div class="nav-group">
-      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navQC">
-        <i class="bi bi-shield-check"></i>
-        <span>Quality Control</span>
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navGoodsReceipt">
+        <i class="bi bi-inbox"></i>
+        <span>Goods Receipt</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navQC">
-        <a href="#" class="nav-sub-item">Test Requests</a>
-        <a href="#" class="nav-sub-item">QC Results</a>
-        <a href="#" class="nav-sub-item">Certificates</a>
+      <div class="collapse" id="navGoodsReceipt">
+        <a href="#" class="nav-sub-item">Advance Shipment Notice</a>
+        <a href="#" class="nav-sub-item">Goods Receipt</a>
+        <a href="#" class="nav-sub-item">Inspection Receipt</a>
+        <a href="#" class="nav-sub-item">Quarantine Receipt</a>
+        <a href="#" class="nav-sub-item">Barcode Labels</a>
+        <a href="#" class="nav-sub-item">Receipt Register</a>
       </div>
     </div>
 
+    <!-- Inventory Management -->
     <div class="nav-group">
-      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navWH">
-        <i class="bi bi-building"></i>
-        <span>Warehouse &amp; Inventory</span>
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navInventory">
+        <i class="bi bi-boxes"></i>
+        <span>Inventory Management</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navWH">
-        <a href="#" class="nav-sub-item">Stock Management</a>
+      <div class="collapse" id="navInventory">
+        <a href="#" class="nav-sub-item">Stock Overview</a>
+        <a href="#" class="nav-sub-item">Goods Issue</a>
+        <a href="#" class="nav-sub-item">Goods Receipt</a>
         <a href="#" class="nav-sub-item">Stock Transfer</a>
-        <a href="#" class="nav-sub-item">Expiry Tracking</a>
+        <a href="#" class="nav-sub-item">Transfer Posting</a>
+        <a href="#" class="nav-sub-item">Stock Adjustment</a>
+        <a href="#" class="nav-sub-item">Batch Management</a>
+        <a href="#" class="nav-sub-item">Serial Number Management</a>
+        <a href="#" class="nav-sub-item">Expiry Management</a>
+        <a href="#" class="nav-sub-item">Material Ledger</a>
       </div>
     </div>
 
+    <!-- Quality Management -->
     <div class="nav-group">
-      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navProd">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navQuality">
+        <i class="bi bi-shield-check"></i>
+        <span>Quality Management</span>
+        <i class="bi bi-chevron-down ms-auto chev"></i>
+      </a>
+      <div class="collapse" id="navQuality">
+        <a href="#" class="nav-sub-item">Sampling</a>
+        <a href="#" class="nav-sub-item">Inspection</a>
+        <a href="#" class="nav-sub-item">Usage Decision</a>
+        <a href="#" class="nav-sub-item">Material Release</a>
+        <a href="#" class="nav-sub-item">Material Rejection</a>
+        <a href="#" class="nav-sub-item">Retest</a>
+        <a href="#" class="nav-sub-item">Deviations</a>
+        <a href="#" class="nav-sub-item">CAPA</a>
+      </div>
+    </div>
+
+    <!-- Warehouse Management -->
+    <div class="nav-group">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navWarehouse">
+        <i class="bi bi-building"></i>
+        <span>Warehouse Management</span>
+        <i class="bi bi-chevron-down ms-auto chev"></i>
+      </a>
+      <div class="collapse" id="navWarehouse">
+        <a href="#" class="nav-sub-item">Put Away</a>
+        <a href="#" class="nav-sub-item">Bin Management</a>
+        <a href="#" class="nav-sub-item">Picking</a>
+        <a href="#" class="nav-sub-item">Packing</a>
+        <a href="#" class="nav-sub-item">Internal Transfer</a>
+        <a href="#" class="nav-sub-item">Warehouse Transfers</a>
+        <a href="#" class="nav-sub-item">Cycle Counting</a>
+        <a href="#" class="nav-sub-item">Warehouse Monitor</a>
+      </div>
+    </div>
+
+    <!-- Physical Inventory -->
+    <div class="nav-group">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navPhysicalInv">
+        <i class="bi bi-check2-all"></i>
+        <span>Physical Inventory</span>
+        <i class="bi bi-chevron-down ms-auto chev"></i>
+      </a>
+      <div class="collapse" id="navPhysicalInv">
+        <a href="#" class="nav-sub-item">Physical Count</a>
+        <a href="#" class="nav-sub-item">Count Verification</a>
+        <a href="#" class="nav-sub-item">Inventory Differences</a>
+        <a href="#" class="nav-sub-item">Inventory Adjustment</a>
+        <a href="#" class="nav-sub-item">Inventory Closing</a>
+      </div>
+    </div>
+
+    <!-- Reports & Analytics -->
+    <div class="nav-group">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navReports">
+        <i class="bi bi-bar-chart-line"></i>
+        <span>Reports &amp; Analytics</span>
+        <i class="bi bi-chevron-down ms-auto chev"></i>
+      </a>
+      <div class="collapse" id="navReports">
+        <a href="#" class="nav-sub-item">Purchasing Reports</a>
+        <a href="#" class="nav-sub-item">Inventory Reports</a>
+        <a href="#" class="nav-sub-item">Warehouse Reports</a>
+        <a href="#" class="nav-sub-item">Quality Reports</a>
+        <a href="#" class="nav-sub-item">Batch Traceability</a>
+        <a href="#" class="nav-sub-item">Expiry Reports</a>
+        <a href="#" class="nav-sub-item">Vendor Performance</a>
+        <a href="#" class="nav-sub-item">Dashboard Analytics</a>
+      </div>
+    </div>
+
+    <!-- Administration -->
+    <div class="nav-group">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navAdmin">
         <i class="bi bi-gear-wide-connected"></i>
-        <span>Production</span>
+        <span>Administration</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navProd">
-        <a href="#" class="nav-sub-item">Batch Records</a>
-        <a href="#" class="nav-sub-item">Process Control</a>
+      <div class="collapse" id="navAdmin">
+        <a href="#" class="nav-sub-item">Users</a>
+        <a href="#" class="nav-sub-item">Roles</a>
+        <a href="#" class="nav-sub-item">Approval Workflow</a>
+        <a href="#" class="nav-sub-item">Number Series</a>
+        <a href="#" class="nav-sub-item">Audit Trail</a>
+        <a href="#" class="nav-sub-item">System Settings</a>
       </div>
     </div>
-
-    <div class="nav-group">
-      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navFG">
-        <i class="bi bi-truck"></i>
-        <span>Finished Goods &amp; Dispatch</span>
-        <i class="bi bi-chevron-down ms-auto chev"></i>
-      </a>
-      <div class="collapse" id="navFG">
-        <a href="#" class="nav-sub-item">Dispatch Orders</a>
-        <a href="#" class="nav-sub-item">Distribution</a>
-      </div>
-    </div>
-
-    <div class="nav-divider"></div>
-
-    <a href="#" class="nav-item">
-      <i class="bi bi-database"></i>
-      <span>Master Data</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="bi bi-folder2-open"></i>
-      <span>Documents</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="bi bi-bar-chart-line"></i>
-      <span>Reports &amp; Analytics</span>
-    </a>
-    <a href="#" class="nav-item">
-      <i class="bi bi-check2-square"></i>
-      <span>Approvals</span>
-    </a>
   </nav>
 
   <div class="sidebar-footer">
@@ -151,13 +234,29 @@
       <button class="icon-btn" aria-label="Help">
         <i class="bi bi-question-circle"></i>
       </button>
-      <div class="user-chip">
-        <div class="avatar">PS</div>
-        <div class="user-info d-none d-md-block">
-          <div class="user-name">Priya Sharma</div>
-          <div class="user-role">Quality Manager</div>
+      <div class="user-menu">
+        <button class="user-chip" id="userMenuToggle" aria-expanded="false" aria-haspopup="true" aria-controls="userMenu">
+          <div class="avatar">PS</div>
+          <div class="user-info d-none d-md-block">
+            <div class="user-name">Priya Sharma</div>
+            <div class="user-role">Quality Manager</div>
+          </div>
+          <i class="bi bi-chevron-down small d-none d-md-block"></i>
+        </button>
+        <div class="user-dropdown" id="userMenu" role="menu">
+          <a href="#" class="user-dropdown-item" role="menuitem">
+            <i class="bi bi-person-circle"></i>
+            <span>My account</span>
+          </a>
+          <a href="#" class="user-dropdown-item" role="menuitem">
+            <i class="bi bi-gear"></i>
+            <span>Settings</span>
+          </a>
+          <a href="#" class="user-dropdown-item" role="menuitem">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </a>
         </div>
-        <i class="bi bi-chevron-down small d-none d-md-block"></i>
       </div>
     </div>
   </header>

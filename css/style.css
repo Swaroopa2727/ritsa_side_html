@@ -242,6 +242,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* User chip */
+.user-menu {
+  position: relative;
+}
 .user-chip {
   display: flex;
   align-items: center;
@@ -249,9 +252,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   padding: 4px 8px;
   border-radius: 9px;
   cursor: pointer;
-  transition: background .15s;
+  transition: background .15s, border-color .15s;
+  border: 1px solid transparent;
+  width: 100%;
 }
-.user-chip:hover { background: var(--body-bg); }
+.user-chip:hover,
+.user-menu.show .user-chip { background: var(--body-bg); border-color: var(--border); }
 .avatar {
   width: 32px; height: 32px;
   border-radius: 50%;
@@ -264,6 +270,45 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .user-name { font-size: 12.5px; font-weight: 600; color: var(--text-primary); line-height: 1.3; }
 .user-role { font-size: 10.5px; color: var(--text-muted); }
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 180px;
+  padding: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity .15s ease, transform .15s ease, visibility .15s ease;
+  z-index: 1001;
+}
+.user-menu.show .user-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.user-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 12px;
+  transition: background .15s;
+}
+.user-dropdown-item:hover {
+  background: var(--body-bg);
+  color: var(--text-primary);
+}
+.user-dropdown-item i {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
 
 /* ---------- CONTENT ---------- */
 .content { padding: 24px 24px 40px; flex: 1; }
