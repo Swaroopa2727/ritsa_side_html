@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EPMMS – Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ========== SIDEBAR ========== -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#1abc9c"/><path d="M7 14c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><circle cx="14" cy="17" r="3.5" fill="#fff"/></svg>
+    </div>
+    <div class="brand-text">
+      <span class="brand-name">EPMMS</span>
+    <span class="brand-sub">Pharma Excellence</span>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="#" class="nav-item active">
+      <i class="bi bi-grid-1x2-fill"></i>
+      <span>Dashboard</span>
+    </a>
+
+    <div class="nav-group">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navProcure">
+        <i class="bi bi-cart3"></i>
+        <span>Procurement &amp; Intake</span>
+        <i class="bi bi-chevron-down ms-auto chev"></i>
+      </a>
+      <div class="collapse" id="navProcure">
+        <a href="#" class="nav-sub-item">Purchase Orders</a>
+        <a href="#" class="nav-sub-item">Material Intake</a>
+        <a href="#" class="nav-sub-item">Vendor Management</a>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navQC">
+        <i class="bi bi-shield-check"></i>
+        <span>Quality Control</span>
+        <i class="bi bi-chevron-down ms-auto chev"></i>
+      </a>
+      <div class="collapse" id="navQC">
+        <a href="#" class="nav-sub-item">Test Requests</a>
+        <a href="#" class="nav-sub-item">QC Results</a>
+        <a href="#" class="nav-sub-item">Certificates</a>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navWH">
+        <i class="bi bi-building"></i>
+        <span>Warehouse &amp; Inventory</span>
+        <i class="bi bi-chevron-down ms-auto chev"></i>
+      </a>
+      <div class="collapse" id="navWH">
+        <a href="#" class="nav-sub-item">Stock Management</a>
+        <a href="#" class="nav-sub-item">Stock Transfer</a>
+        <a href="#" class="nav-sub-item">Expiry Tracking</a>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navProd">
+        <i class="bi bi-gear-wide-connected"></i>
+        <span>Production</span>
+        <i class="bi bi-chevron-down ms-auto chev"></i>
+      </a>
+      <div class="collapse" id="navProd">
+        <a href="#" class="nav-sub-item">Batch Records</a>
+        <a href="#" class="nav-sub-item">Process Control</a>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <a href="#" class="nav-item has-children" data-bs-toggle="collapse" data-bs-target="#navFG">
+        <i class="bi bi-truck"></i>
+        <span>Finished Goods &amp; Dispatch</span>
+        <i class="bi bi-chevron-down ms-auto chev"></i>
+      </a>
+      <div class="collapse" id="navFG">
+        <a href="#" class="nav-sub-item">Dispatch Orders</a>
+        <a href="#" class="nav-sub-item">Distribution</a>
+      </div>
+    </div>
+
+    <div class="nav-divider"></div>
+
+    <a href="#" class="nav-item">
+      <i class="bi bi-database"></i>
+      <span>Master Data</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-folder2-open"></i>
+      <span>Documents</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-bar-chart-line"></i>
+      <span>Reports &amp; Analytics</span>
+    </a>
+    <a href="#" class="nav-item">
+      <i class="bi bi-check2-square"></i>
+      <span>Approvals</span>
+    </a>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="app-pill">
+      <svg width="22" height="22" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#1abc9c"/><circle cx="14" cy="14" r="8" fill="white" opacity="0.3"/><circle cx="10" cy="17" r="5" fill="white"/><circle cx="17" cy="12" r="4" fill="#1abc9c" opacity="0.7"/></svg>
+      <div>
+        <div class="app-name">EPMMS v1.0.0</div>
+        <div class="app-copy">&copy; 2025 Pharma Corp.</div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- ========== MAIN ========== -->
+<div class="main-wrapper" id="mainWrapper">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <i class="bi bi-list"></i>
+      </button>
+      <h5 class="page-title mb-0">Dashboard</h5>
+    </div>
+
+    <!-- <div class="topbar-center">
+      <div class="search-wrap">
+        <i class="bi bi-search search-icon"></i>
+        <input type="search" class="search-input" placeholder="Search modules, documents, batches…" />
+      </div>
+    </div> -->
+
+    <div class="topbar-right">
+      <button class="icon-btn position-relative" aria-label="Notifications">
+        <i class="bi bi-bell"></i>
+        <span class="badge-dot">12</span>
+      </button>
+      <button class="icon-btn" aria-label="Help">
+        <i class="bi bi-question-circle"></i>
+      </button>
+      <div class="user-chip">
+        <div class="avatar">PS</div>
+        <div class="user-info d-none d-md-block">
+          <div class="user-name">Priya Sharma</div>
+          <div class="user-role">Quality Manager</div>
+        </div>
+        <i class="bi bi-chevron-down small d-none d-md-block"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- Page Header -->
+    <div class="page-header d-flex justify-content-between align-items-start flex-wrap gap-2 mb-4">
+      <div>
+        <h4 class="page-heading mb-1">Enterprise Pharmaceutical Material Management System</h4>
+        <p class="page-sub mb-0">End-to-End Material Management from Raw Material to Finished Goods</p>
+      </div>
+      <div class="date-badge">
+        <i class="bi bi-calendar3"></i>
+        <span>June 4, 2025 &bull; 10:30 AM</span>
+      </div>
+    </div>
+
+    <!-- Process Steps -->
+    <div class="process-steps mb-4">
+      <div class="step-card">
+        <div class="step-num" style="background:#3b82f6;">1</div>
+        <div class="step-body">
+          <div class="step-title">Procurement &amp; Intake</div>
+          <div class="step-sub">Raw Material Intake</div>
+        </div>
+      </div>
+      <div class="step-arrow"><i class="bi bi-arrow-right"></i></div>
+      <div class="step-card">
+        <div class="step-num" style="background:#1abc9c;">2</div>
+        <div class="step-body">
+          <div class="step-title">Quality Control</div>
+          <div class="step-sub">Quality Assurance</div>
+        </div>
+      </div>
+      <div class="step-arrow"><i class="bi bi-arrow-right"></i></div>
+      <div class="step-card">
+        <div class="step-num" style="background:#8b5cf6;">3</div>
+        <div class="step-body">
+          <div class="step-title">Warehouse &amp; Inventory</div>
+          <div class="step-sub">Stock Management</div>
+        </div>
+      </div>
+      <div class="step-arrow"><i class="bi bi-arrow-right"></i></div>
+      <div class="step-card">
+        <div class="step-num" style="background:#f59e0b;">4</div>
+        <div class="step-body">
+          <div class="step-title">Production</div>
+          <div class="step-sub">Manufacturing</div>
+        </div>
+      </div>
+      <div class="step-arrow"><i class="bi bi-arrow-right"></i></div>
+      <div class="step-card">
+        <div class="step-num" style="background:#06b6d4;">5</div>
+        <div class="step-body">
+          <div class="step-title">Finished Goods &amp; Dispatch</div>
+          <div class="step-sub">Distribution</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI Cards -->
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-lg-auto flex-lg-fill">
+        <div class="kpi-card">
+          <div class="kpi-body">
+            <div class="kpi-label">Total Raw Materials</div>
+            <div class="kpi-value" style="color:#3b82f6;">1,243</div>
+            <div class="kpi-delta positive"><i class="bi bi-arrow-up-short"></i>+12.5% vs last month</div>
+          </div>
+          <div class="kpi-icon" style="background:rgba(59,130,246,.1);color:#3b82f6;">
+            <i class="bi bi-flask"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-auto flex-lg-fill">
+        <div class="kpi-card">
+          <div class="kpi-body">
+            <div class="kpi-label">QC Tests Today</div>
+            <div class="kpi-value" style="color:#1abc9c;">28</div>
+            <div class="kpi-delta positive"><i class="bi bi-arrow-up-short"></i>+8.3% vs yesterday</div>
+          </div>
+          <div class="kpi-icon" style="background:rgba(26,188,156,.1);color:#1abc9c;">
+            <i class="bi bi-shield-check"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-auto flex-lg-fill">
+        <div class="kpi-card">
+          <div class="kpi-body">
+            <div class="kpi-label">Inventory Value</div>
+            <div class="kpi-value" style="color:#8b5cf6;">₹12.45 Cr</div>
+            <div class="kpi-delta positive"><i class="bi bi-arrow-up-short"></i>+5.2% vs last month</div>
+          </div>
+          <div class="kpi-icon" style="background:rgba(139,92,246,.1);color:#8b5cf6;">
+            <i class="bi bi-box-seam"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-auto flex-lg-fill">
+        <div class="kpi-card">
+          <div class="kpi-body">
+            <div class="kpi-label">Batches in Production</div>
+            <div class="kpi-value" style="color:#f59e0b;">16</div>
+            <div class="kpi-delta positive"><i class="bi bi-arrow-up-short"></i>+2 vs yesterday</div>
+          </div>
+          <div class="kpi-icon" style="background:rgba(245,158,11,.1);color:#f59e0b;">
+            <i class="bi bi-building-gear"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 col-lg-auto flex-lg-fill">
+        <div class="kpi-card">
+          <div class="kpi-body">
+            <div class="kpi-label">Dispatches Today</div>
+            <div class="kpi-value" style="color:#06b6d4;">24</div>
+            <div class="kpi-delta positive"><i class="bi bi-arrow-up-short"></i>+20.0% vs yesterday</div>
+          </div>
+          <div class="kpi-icon" style="background:rgba(6,182,212,.1);color:#06b6d4;">
+            <i class="bi bi-truck"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle Row -->
+    <div class="row g-3 mb-3">
+
+      <!-- Process Overview -->
+      <div class="col-12 col-lg-4">
+        <div class="card-panel h-100">
+          <div class="panel-title">Process Overview</div>
+          <div class="process-list">
+
+            <div class="process-row">
+              <div class="proc-num" style="background:#3b82f6;">1</div>
+              <div class="proc-info">
+                <div class="proc-name" style="color:#3b82f6;">Procurement &amp; Material Intake</div>
+                <div class="proc-desc">Raw material identification to inward register</div>
+              </div>
+              <span class="proc-badge active">9 Active</span>
+            </div>
+
+            <div class="process-row">
+              <div class="proc-num" style="background:#1abc9c;">2</div>
+              <div class="proc-info">
+                <div class="proc-name" style="color:#1abc9c;">Quality Control &amp; Release</div>
+                <div class="proc-desc">Sampling, testing and QA release</div>
+              </div>
+              <span class="proc-badge active">5 Active</span>
+            </div>
+
+            <div class="process-row">
+              <div class="proc-num" style="background:#8b5cf6;">3</div>
+              <div class="proc-info">
+                <div class="proc-name" style="color:#8b5cf6;">Warehouse &amp; Inventory</div>
+                <div class="proc-desc">Storage, stock management and expiry tracking</div>
+              </div>
+              <span class="proc-badge alert">3 Alerts</span>
+            </div>
+
+            <div class="process-row">
+              <div class="proc-num" style="background:#f59e0b;">4</div>
+              <div class="proc-info">
+                <div class="proc-name" style="color:#f59e0b;">Production Process Flow</div>
+                <div class="proc-desc">Manufacturing and in-process control</div>
+              </div>
+              <span class="proc-badge active">16 Active</span>
+            </div>
+
+            <div class="process-row">
+              <div class="proc-num" style="background:#06b6d4;">5</div>
+              <div class="proc-info">
+                <div class="proc-name" style="color:#06b6d4;">Finished Goods &amp; Dispatch</div>
+                <div class="proc-desc">Quality release to dispatch and delivery</div>
+              </div>
+              <span class="proc-badge active">12 Active</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- QC Summary -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card-panel h-100">
+          <div class="panel-title">Quality Control Summary</div>
+          <div class="chart-container d-flex align-items-center justify-content-center gap-4 flex-wrap">
+            <div class="donut-wrap">
+              <svg class="donut-svg" viewBox="0 0 120 120">
+                <circle class="donut-bg" cx="60" cy="60" r="48"/>
+                <!-- Approved 62.8% -->
+                <circle class="donut-seg" cx="60" cy="60" r="48" stroke="#1abc9c"
+                  stroke-dasharray="188.5 301.6" stroke-dashoffset="75.4"/>
+                <!-- Rejected 11.5% -->
+                <circle class="donut-seg" cx="60" cy="60" r="48" stroke="#ef4444"
+                  stroke-dasharray="34.5 490.1" stroke-dashoffset="-113.1"/>
+                <!-- In Progress 17.9% -->
+                <circle class="donut-seg" cx="60" cy="60" r="48" stroke="#f59e0b"
+                  stroke-dasharray="53.7 471" stroke-dashoffset="-147.6"/>
+                <!-- On Hold 7.7% -->
+                <circle class="donut-seg" cx="60" cy="60" r="48" stroke="#94a3b8"
+                  stroke-dasharray="23.1 477.6" stroke-dashoffset="-201.3"/>
+                <text x="60" y="55" class="donut-num">156</text>
+                <text x="60" y="70" class="donut-label">Total Tests</text>
+              </svg>
+            </div>
+            <div class="legend">
+              <div class="legend-item"><span class="dot" style="background:#1abc9c;"></span>Approved <strong>98 (62.8%)</strong></div>
+              <div class="legend-item"><span class="dot" style="background:#ef4444;"></span>Rejected <strong>18 (11.5%)</strong></div>
+              <div class="legend-item"><span class="dot" style="background:#f59e0b;"></span>In Progress <strong>28 (17.9%)</strong></div>
+              <div class="legend-item"><span class="dot" style="background:#94a3b8;"></span>On Hold <strong>12 (7.7%)</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inventory Status -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card-panel h-100">
+          <div class="panel-title">Inventory Status</div>
+          <div class="chart-container d-flex align-items-center justify-content-center gap-4 flex-wrap">
+            <div class="donut-wrap">
+              <svg class="donut-svg" viewBox="0 0 120 120">
+                <circle class="donut-bg" cx="60" cy="60" r="48"/>
+                <!-- Available 66.5% -->
+                <circle class="donut-seg" cx="60" cy="60" r="48" stroke="#1abc9c"
+                  stroke-dasharray="199.6 301.6" stroke-dashoffset="75.4"/>
+                <!-- Reserved 16% -->
+                <circle class="donut-seg" cx="60" cy="60" r="48" stroke="#3b82f6"
+                  stroke-dasharray="48.1 477.6" stroke-dashoffset="-124.2"/>
+                <!-- Expired 2.7% -->
+                <circle class="donut-seg" cx="60" cy="60" r="48" stroke="#ef4444"
+                  stroke-dasharray="8.1 492.5" stroke-dashoffset="-172.3"/>
+                <!-- Expiring Soon 14.8% -->
+                <circle class="donut-seg" cx="60" cy="60" r="48" stroke="#f59e0b"
+                  stroke-dasharray="44.4 477.6" stroke-dashoffset="-180.4"/>
+                <text x="60" y="55" class="donut-num">2,847</text>
+                <text x="60" y="70" class="donut-label">Total Items</text>
+              </svg>
+            </div>
+            <div class="legend">
+              <div class="legend-item"><span class="dot" style="background:#1abc9c;"></span>Available <strong>1,892 (66.5%)</strong></div>
+              <div class="legend-item"><span class="dot" style="background:#3b82f6;"></span>Reserved <strong>456 (16.0%)</strong></div>
+              <div class="legend-item"><span class="dot" style="background:#ef4444;"></span>Expired <strong>78 (2.7%)</strong></div>
+              <div class="legend-item"><span class="dot" style="background:#f59e0b;"></span>Expiring Soon <strong>421 (14.8%)</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="row g-3">
+
+      <!-- Critical Alerts -->
+      <div class="col-12 col-lg-4">
+        <div class="card-panel">
+          <div class="panel-header">
+            <div class="panel-title alert-title">Critical Alerts</div>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <div class="alert-list">
+            <div class="alert-item critical">
+              <div class="alert-icon-wrap critical"><i class="bi bi-exclamation-circle-fill"></i></div>
+              <div class="alert-text">
+                <div class="alert-msg">12 batches expiring within 30 days</div>
+                <div class="alert-sub">Immediate attention required</div>
+              </div>
+            </div>
+            <div class="alert-item warning">
+              <div class="alert-icon-wrap warning"><i class="bi bi-exclamation-triangle-fill"></i></div>
+              <div class="alert-text">
+                <div class="alert-msg">3 quality tests failed</div>
+                <div class="alert-sub">Review and investigation required</div>
+              </div>
+            </div>
+            <div class="alert-item low">
+              <div class="alert-icon-wrap low"><i class="bi bi-arrow-down-circle-fill"></i></div>
+              <div class="alert-text">
+                <div class="alert-msg">5 materials below minimum stock</div>
+                <div class="alert-sub">Reorder recommended</div>
+              </div>
+            </div>
+            <div class="alert-item info">
+              <div class="alert-icon-wrap info"><i class="bi bi-clock-fill"></i></div>
+              <div class="alert-text">
+                <div class="alert-msg">2 equipment calibration due</div>
+                <div class="alert-sub">Schedule calibration</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Activities -->
+      <div class="col-12 col-lg-4">
+        <div class="card-panel">
+          <div class="panel-header">
+            <div class="panel-title">Recent Activities</div>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <div class="activity-list">
+            <div class="activity-row">
+              <div class="act-icon" style="background:rgba(59,130,246,.1);color:#3b82f6;"><i class="bi bi-cart3"></i></div>
+              <div class="act-text">Raw material batch RM-2025-061 received</div>
+              <div class="act-time">10:25 AM</div>
+            </div>
+            <div class="activity-row">
+              <div class="act-icon" style="background:rgba(26,188,156,.1);color:#1abc9c;"><i class="bi bi-shield-check"></i></div>
+              <div class="act-text">QC test completed for batch QC-2025-155</div>
+              <div class="act-time">09:45 AM</div>
+            </div>
+            <div class="activity-row">
+              <div class="act-icon" style="background:rgba(139,92,246,.1);color:#8b5cf6;"><i class="bi bi-building"></i></div>
+              <div class="act-text">Material issued for production batch PRD-2025-089</div>
+              <div class="act-time">09:30 AM</div>
+            </div>
+            <div class="activity-row">
+              <div class="act-icon" style="background:rgba(6,182,212,.1);color:#06b6d4;"><i class="bi bi-truck"></i></div>
+              <div class="act-text">Finished goods batch FG-2025-067 dispatched</div>
+              <div class="act-time">09:15 AM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div class="col-12 col-lg-4">
+        <div class="card-panel">
+          <div class="panel-title">Quick Actions</div>
+          <div class="quick-grid">
+            <button class="quick-btn">
+              <div class="quick-icon"><i class="bi bi-cart-plus"></i></div>
+              <span>New Purchase</span>
+            </button>
+            <button class="quick-btn">
+              <div class="quick-icon"><i class="bi bi-flask"></i></div>
+              <span>Create QC Test</span>
+            </button>
+            <button class="quick-btn">
+              <div class="quick-icon"><i class="bi bi-arrow-left-right"></i></div>
+              <span>Stock Transfer</span>
+            </button>
+            <button class="quick-btn">
+              <div class="quick-icon"><i class="bi bi-building-gear"></i></div>
+              <span>Production Order</span>
+            </button>
+            <button class="quick-btn">
+              <div class="quick-icon"><i class="bi bi-truck"></i></div>
+              <span>Create Dispatch</span>
+            </button>
+            <button class="quick-btn">
+              <div class="quick-icon"><i class="bi bi-bar-chart-line"></i></div>
+              <span>Generate Report</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
