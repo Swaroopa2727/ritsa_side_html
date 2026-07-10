@@ -23,6 +23,7 @@
   --font: 'poppins', sans-serif;
 }
 
+
 /* ---------- RESET / BASE ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 body {
@@ -40,8 +41,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ---------- LAYOUT ---------- */
 .sidebar {
   position: fixed;
-  top: 0; left: 0; bottom: 0;
-  width: var(--sidebar-w);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 210px;
   background: var(--sidebar-bg);
   display: flex;
   flex-direction: column;
@@ -52,7 +55,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .main-wrapper {
-  margin-left: var(--sidebar-w);
+  margin-left: 210px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -64,11 +67,18 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 20px 18px 16px;
+  padding: 0px 12px 0px;
   border-bottom: 1px solid rgba(255,255,255,.06);
   flex-shrink: 0;
 }
-.brand-logo { flex-shrink: 0; }
+.brand-logo {flex-shrink: 0;}
+.brand-img {
+  width: 185px;
+  /* height: 70px; */
+  display: block;
+  border-radius: 6px;
+  object-fit: cover;
+}
 .brand-name {
   display: block;
   font-size: 15px;
@@ -398,8 +408,28 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   gap: 14px;
   height: 100%;
 }
+
+/* Equal-height cards for specific bottom row */
+.equal-row > [class*="col-"] {
+  display: flex;
+}
+.equal-row .card-panel {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+.equal-row .card-panel .panel-header,
+.equal-row .card-panel > .panel-title {
+  flex: 0 0 auto;
+}
+.equal-row .card-panel > .alert-list,
+.equal-row .card-panel > .activity-list,
+.equal-row .card-panel > .quick-grid {
+  overflow: auto;
+  flex: 1 1 auto;
+}
 .kpi-body { flex: 1; }
-.kpi-label { font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-bottom: 4px; }
+.kpi-label { font-size: 12px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
 .kpi-value {font-size: 17px;/* font-weight: 700; *//* line-height: 1.2; */margin-bottom: 4px;}
 .kpi-delta { font-size: 11.5px; color: var(--text-muted); display: flex; align-items: center; gap: 2px; }
 .kpi-delta.positive { color: #16a34a; }

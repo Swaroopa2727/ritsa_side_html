@@ -14,17 +14,17 @@
 
 <!-- ========== SIDEBAR ========== -->
 <aside class="sidebar" id="sidebar">
-  <div class="sidebar-brand">
+  <a href="#" class="sidebar-brand">
     <div class="brand-logo">
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#1abc9c"/><path d="M7 14c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><circle cx="14" cy="17" r="3.5" fill="#fff"/></svg>
+      <img src="images/logo.png" alt="EPMMS logo" class="brand-img" />
     </div>
-    <div class="brand-text">
+    <!-- <div class="brand-text">
       <span class="brand-name">EPMMS</span>
-    <span class="brand-sub">Pharma Excellence</span>
-    </div>
-  </div>
+      <span class="brand-sub">Pharma Excellence</span>
+    </div> -->
+  </a>
 
-  <nav class="sidebar-nav">
+  <nav class="sidebar-nav" id="sidebarNav">
     <a href="#" class="nav-item active">
       <i class="bi bi-grid-1x2-fill"></i>
       <span>Dashboard</span>
@@ -37,7 +37,7 @@
         <span>Master Data</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navMasterData">
+      <div class="collapse" id="navMasterData" data-bs-parent="#sidebarNav">
         <a href="#" class="nav-sub-item">Organization</a>
         <a href="#" class="nav-sub-item">Materials</a>
         <a href="#" class="nav-sub-item">Business Partners</a>
@@ -56,7 +56,7 @@
         <span>Purchasing</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navPurchasing">
+      <div class="collapse" id="navPurchasing" data-bs-parent="#sidebarNav">
         <a href="#" class="nav-sub-item">Purchase Requisition</a>
         <a href="#" class="nav-sub-item">Request for Quotation (RFQ)</a>
         <a href="#" class="nav-sub-item">Quotation Comparison</a>
@@ -74,7 +74,7 @@
         <span>Goods Receipt</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navGoodsReceipt">
+      <div class="collapse" id="navGoodsReceipt" data-bs-parent="#sidebarNav">
         <a href="#" class="nav-sub-item">Advance Shipment Notice</a>
         <a href="#" class="nav-sub-item">Goods Receipt</a>
         <a href="#" class="nav-sub-item">Inspection Receipt</a>
@@ -91,7 +91,7 @@
         <span>Inventory Management</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navInventory">
+      <div class="collapse" id="navInventory" data-bs-parent="#sidebarNav">
         <a href="#" class="nav-sub-item">Stock Overview</a>
         <a href="#" class="nav-sub-item">Goods Issue</a>
         <a href="#" class="nav-sub-item">Goods Receipt</a>
@@ -112,7 +112,7 @@
         <span>Quality Management</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navQuality">
+      <div class="collapse" id="navQuality" data-bs-parent="#sidebarNav">
         <a href="#" class="nav-sub-item">Sampling</a>
         <a href="#" class="nav-sub-item">Inspection</a>
         <a href="#" class="nav-sub-item">Usage Decision</a>
@@ -131,7 +131,7 @@
         <span>Warehouse Management</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navWarehouse">
+      <div class="collapse" id="navWarehouse" data-bs-parent="#sidebarNav">
         <a href="#" class="nav-sub-item">Put Away</a>
         <a href="#" class="nav-sub-item">Bin Management</a>
         <a href="#" class="nav-sub-item">Picking</a>
@@ -150,7 +150,7 @@
         <span>Physical Inventory</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navPhysicalInv">
+      <div class="collapse" id="navPhysicalInv" data-bs-parent="#sidebarNav">
         <a href="#" class="nav-sub-item">Physical Count</a>
         <a href="#" class="nav-sub-item">Count Verification</a>
         <a href="#" class="nav-sub-item">Inventory Differences</a>
@@ -166,7 +166,7 @@
         <span>Reports &amp; Analytics</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navReports">
+      <div class="collapse" id="navReports" data-bs-parent="#sidebarNav">
         <a href="#" class="nav-sub-item">Purchasing Reports</a>
         <a href="#" class="nav-sub-item">Inventory Reports</a>
         <a href="#" class="nav-sub-item">Warehouse Reports</a>
@@ -185,7 +185,7 @@
         <span>Administration</span>
         <i class="bi bi-chevron-down ms-auto chev"></i>
       </a>
-      <div class="collapse" id="navAdmin">
+      <div class="collapse" id="navAdmin" data-bs-parent="#sidebarNav">
         <a href="#" class="nav-sub-item">Users</a>
         <a href="#" class="nav-sub-item">Roles</a>
         <a href="#" class="nav-sub-item">Approval Workflow</a>
@@ -238,7 +238,7 @@
         <button class="user-chip" id="userMenuToggle" aria-expanded="false" aria-haspopup="true" aria-controls="userMenu">
           <div class="avatar">PS</div>
           <div class="user-info d-none d-md-block">
-            <div class="user-name">Priya Sharma</div>
+            <div class="user-name">Swaroopa Bhupathi</div>
             <div class="user-role">Quality Manager</div>
           </div>
           <i class="bi bi-chevron-down small d-none d-md-block"></i>
@@ -511,7 +511,7 @@
     </div>
 
     <!-- Bottom Row -->
-    <div class="row g-3">
+    <div class="row g-3 equal-row">
 
       <!-- Critical Alerts -->
       <div class="col-12 col-lg-4">
