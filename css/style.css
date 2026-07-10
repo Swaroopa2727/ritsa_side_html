@@ -25,7 +25,7 @@
 
 
 /* ---------- RESET / BASE ---------- */
-*, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after {box-sizing: border-box;}
 body {
   margin: 0;
   font-family: var(--font);
@@ -45,7 +45,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   left: 0;
   bottom: 0;
   width: 210px;
-  background: var(--sidebar-bg);
+  background: #29041b;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -67,17 +67,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0px 12px 0px;
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  /* padding: 0px 0px 0px; */
+  /* border-bottom: 1px solid rgba(255,255,255,.06); */
   flex-shrink: 0;
 }
 .brand-logo {flex-shrink: 0;}
 .brand-img {
-  width: 165px;
+  width: 210px;
   /* height: 70px; */
   display: block;
-  border-radius: 6px;
-  object-fit: cover;
+  /* border-radius: 6px; */
+  /* object-fit: cover; */
 }
 .brand-name {
   display: block;
@@ -97,7 +97,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ---------- NAV ---------- */
 .sidebar-nav {
   flex: 1;
-  padding: 12px 10px;
+  padding: 10px 10px;
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -115,8 +115,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .nav-item:hover { background: var(--sidebar-hover); color: #fff; }
 .nav-item.active {
-  background: var(--sidebar-active);
-  color: var(--brand-green);
+  background: rgb(219 81 168);
+  color: #ffffff;
 }
 .nav-item i {font-size: 14px;flex-shrink: 0;}
 .nav-item .chev { font-size: 11px; transition: transform .2s; }
