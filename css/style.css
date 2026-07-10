@@ -73,7 +73,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .brand-logo {flex-shrink: 0;}
 .brand-img {
-  width: 185px;
+  width: 165px;
   /* height: 70px; */
   display: block;
   border-radius: 6px;
